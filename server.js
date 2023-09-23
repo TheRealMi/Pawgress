@@ -1,9 +1,10 @@
 // Initialize sessions and server in this file
+const path = require('path');
 const express = require('express');
 const session = require('express-session');
 const exphbs = require('express-handlebars');
 const routes = require('./controllers');
-// create a const for helpers here (const helpers = require(./utils/helpers);)
+const helpers = require('./utils/helpers');
 
 const sequelize = require('./config/connection');
 const SequelizeStore = require('connect-session-sequelize')(session.Store);
@@ -11,7 +12,7 @@ const SequelizeStore = require('connect-session-sequelize')(session.Store);
 const app = express();
 const PORT = process.env.PORT || 3001;
 
-const hbs = exphbs.create({helpers});
+const hbs = exphbs.create({ helpers });
 
 // Define session & fill properties
 const sess = {
