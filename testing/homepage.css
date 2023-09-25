@@ -1,0 +1,73 @@
+header{
+    
+    background-color: orange;
+
+}
+
+#pawgress{
+    text-align: center;
+}
+
+#middle {
+    background-color: aqua;
+
+}
+
+.title{
+    text-align: center;
+    font-family:'Khand';
+}
+
+#paw-watermark{
+    
+opacity: 0.1;
+position: fixed;
+bottom: 0px;
+right: -150px;
+height: auto;
+width: 700px;
+}
+
+
+
+#dog-watermark{
+    
+opacity: 0.1;
+position: fixed;
+top: -115px;
+left: 725px;
+right: 825px;
+    
+}
+
+
+
+
+#description {
+    width: 500px;
+    text-align:justify;
+    font-size: 22px;
+    position: fixed;
+    right: 300px;
+    top: 300px;
+}
+
+
+
+#login{
+    position: fixed;
+    bottom: 150px;
+    right: 300px;
+}
+
+#create{
+    position: fixed;
+    bottom: 150px;
+    right: 480px;
+    text-decoration: underline;
+}
+
+#dogs{
+    height: auto;
+    width: 5000px;
+}
