@@ -10,7 +10,7 @@ const sequelize = require('./config/connection');
 const SequelizeStore = require('connect-session-sequelize')(session.Store);
 
 const app = express();
-const PORT = process.env.PORT || 3001;
+const PORT = process.env.PORT || 3002;
 
 const hbs = exphbs.create({ helpers });
 
@@ -47,4 +47,33 @@ app.use(routes);
 // Start server
 sequelize.sync({ force: false }).then(() => {
     app.listen(PORT, () => console.log('Now listening'));
+});
+
+
+//handlebars routes
+
+
+// homepage
+app.get('/', (req, res) => {
+    res.render('homepage', { title: 'Home Page' });
+});
+
+// create account
+app.get('/createaccount', (req, res) => {
+    res.render('createaccount', { title: 'Create Account' });
+});
+
+// feed
+app.get('/feed', (req, res) => {
+    res.render('feed', { title: 'Feed', feed: feedData });
+});
+
+// login
+app.get('/login', (req, res) => {
+    res.render('login', { title: 'Login' });
+});
+
+// profile
+app.get('/profile', (req, res) => {
+    res.render('profile', { title: 'Profile', user: userData });
 });
