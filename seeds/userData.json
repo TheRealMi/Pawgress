@@ -1,0 +1,17 @@
+[
+    {
+        "username": "Ploy",
+        "email": "ploy@bootcamp.com",
+        "password": "wordpass"
+    },
+    {
+        "username": "Asosa",
+        "email": "annie@bootcamp.com",
+        "password": "wordpass"
+    },
+    {
+        "username": "RealMi",
+        "email": "mia@bootcamp.com",
+        "password": "wordpass"
+    }
+]
