@@ -1,11 +1,11 @@
 // Write function to seed database here
 const sequelize = require('../config/connection');
-const { User, Pet, Behavior, Session } = require('../models');
+const { User, Pet, Behavior, Training } = require('../models');
 
 const userData = require('./userData.json');
 const petData = require('./petData.json');
 const behaviorData = require('./behaviorData.json');
-const sessionData = require('./sessionData.json');
+const trainingData = require('./trainingData.json');
 
 const seedDatabase = async () => {
   await sequelize.sync({ force: true });
@@ -19,7 +19,7 @@ const seedDatabase = async () => {
 
   const behaviors = await Behavior.bulkCreate(behaviorData);
 
-  const sessions = await Session.bulkCreate(sessionData);
+  const sessions = await Training.bulkCreate(trainingData);
 
   process.exit(0);
 };

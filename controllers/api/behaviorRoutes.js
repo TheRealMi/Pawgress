@@ -5,11 +5,10 @@ const withAuth = require('../../utils/auth');
 // Route to get all behaviors for a specific pet
 router.get('/:pet_id', async (req, res) => {
     try {
-        const behaviors = await Behavior.findAll({
-            include: [{ model: Pet }, { model: User }],
+        const behaviors = await Pet.findAll({
+            include: [{ model: Behavior }],
             where: {
-                user_id: req.session.user_id,
-                pet_id: req.params.pet_id
+                id: req.params.pet_id
             }
         });
         res.status(200).json(behaviors);
@@ -18,8 +17,9 @@ router.get('/:pet_id', async (req, res) => {
     }
 });
 
-// Route to create a new behavior for a specific pet
-router.post('/', withAuth, async (req, res) => {
+// Route to create a new behavior 
+// Need to figure out how to create for a specific pet using pet_id
+router.post('/', async (req, res) => {
     try {
         const newBehavior = await Behavior.create(req.body);
         res.status(201).json(newBehavior);
@@ -27,34 +27,5 @@ router.post('/', withAuth, async (req, res) => {
         res.status(400).json(err);
     }
 });
-
-// Route to get all training logs for a specific behavior
-router.get('/:behavior_id', withAuth, async (req, res) => {
-    try {
-      const allTrainings = await Training.findAll({
-        where: {
-            behavior_id: req.params.behavior_id
-        }
-      });
-  
-      res.status(200).json(allTrainings);
-    } catch (err) {
-      res.status(400).json(err);
-    }
-  });
-
-// Route to create a new training log 
-router.post('/:behavior_id', withAuth, async (req, res) => {
-    try {
-      const newTraining = await Training.create({
-        ...req.body,
-        behavior_id: req.params.behavior_id
-      });
-  
-      res.status(200).json(newTraining);
-    } catch (err) {
-      res.status(400).json(err);
-    }
-  });
 
   module.exports = router;

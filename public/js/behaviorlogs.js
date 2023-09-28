@@ -1,1 +1,1 @@
-// Create 'new log' form handler
+// Create 'new training log' form handler
