@@ -28,6 +28,21 @@ router.post('/', withAuth, async (req, res) => {
     }
 });
 
+// Route to get all training logs for a specific behavior
+router.get('/:behavior_id', withAuth, async (req, res) => {
+    try {
+      const allTrainings = await Training.findAll({
+        where: {
+            behavior_id: req.params.behavior_id
+        }
+      });
+  
+      res.status(200).json(allTrainings);
+    } catch (err) {
+      res.status(400).json(err);
+    }
+  });
+
 // Route to create a new training log 
 router.post('/:behavior_id', withAuth, async (req, res) => {
     try {
