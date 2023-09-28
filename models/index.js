@@ -2,7 +2,7 @@
 const User = require('./User');
 const Pet = require('./Pet');
 const Behavior = require('./Behavior');
-const Session = require('./Log');
+const Training = require('./Training');
 
 User.hasMany(Pet, {
     foreignKey: 'user_id',
@@ -22,13 +22,13 @@ Behavior.belongsTo(Pet, {
     foreignKey: 'pet_id'
 });
 
-Behavior.hasMany(Session, {
+Behavior.hasMany(Training, {
     foreignKey: 'behavior_id',
     onDelete: 'CASCADE'
 });
 
-Session.belongsTo(Behavior, {
+Training.belongsTo(Behavior, {
     foreignKey: 'behavior_id'
 });
 
-module.exports = { User, Pet, Behavior, Session };
+module.exports = { User, Pet, Behavior, Training };

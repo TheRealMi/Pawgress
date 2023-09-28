@@ -1,10 +1,12 @@
 const router = require('express').Router();
-const { Behavior } = require('../../models');
+const { Pet, Behavior } = require('../../models');
 
 // Route to get all behaviors
 router.get('/', async (req, res) => {
     try {
-        const behaviors = await Behavior.findAll();
+        const behaviors = await Behavior.findAll({
+            include: [{ model: Pet }]
+        });
         res.status(200).json(behaviors);
     } catch (err) {
         res.status(500).json(err);

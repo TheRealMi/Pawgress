@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const{ User, Pet, Behavior, Log } = require('../models');
+const{ User, Pet, Behavior, Training } = require('../models');
 const withAuth = require('../utils/auth');
 
 router.get('/', function (req, res) {
@@ -37,10 +37,11 @@ router.get('/profile', withAuth, async (req, res) => {
     }
   });
 
+// Populate feed cards with info from db
 router.get('/feed', async (req, res) => {
     try {
-        // Get all sessions and join with user and pet data
-        const logData = await Log.findAll({
+        // Get all trainings and join with user and pet data
+        const trainingData = await Training.findAll({
             include: [
                 {
                     model: User,
@@ -54,11 +55,11 @@ router.get('/feed', async (req, res) => {
         });
 
         // Serialize data so template can read it
-        const logs = logData.map((log) => log.get({ plain: true }));
+        const trainings = trainingData.map((training) => training.get({ plain: true }));
 
         // Pass serialized data into template
         res.render('feed', {
-            logs
+            trainings
         });
     } catch (err) {
         res.status(500).json(err)
