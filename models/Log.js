@@ -1,9 +1,9 @@
 const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
 
-class Session extends Model {}
+class Log extends Model {}
 
-Session.init(
+Log.init(
   {
     id: {
       type: DataTypes.INTEGER,
@@ -39,8 +39,8 @@ Session.init(
     timestamps: false,
     freezeTableName: true,
     underscored: true,
-    modelName: 'session',
+    modelName: 'log',
   }
 );
 
-module.exports = Session;
+module.exports = Log;

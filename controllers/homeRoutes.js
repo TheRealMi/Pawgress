@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const{ User, Pet, Behavior, Session } = require('../models');
+const{ User, Pet, Behavior, Log } = require('../models');
 const withAuth = require('../utils/auth');
 
 router.get('/', function (req, res) {
@@ -10,20 +10,24 @@ router.get('/login', function (req, res) {
     res.render('login');
 })
 
-router.get('/createaccount', function (req, res) {
+router.get('/createaccount',  function (req, res) {
     res.render('createaccount');
 })
 
+
+// Use withAuth to make sure user is logged in before granting access to profile page
 router.get('/profile', withAuth, async (req, res) => {
+
     try {
       // Find the logged in user based on the session ID
       const userData = await User.findByPk(req.session.user_id, {
         attributes: { exclude: ['password'] },
-        include: [{ model: Project }],
+        // Join the Pet and Behavior tables associated with the user that is logged in
+        include: [{ model: Pet }, { model: Behavior }]
       });
   
       const user = userData.get({ plain: true });
-  
+ 
       res.render('profile', {
         ...user,
         logged_in: true
@@ -31,12 +35,12 @@ router.get('/profile', withAuth, async (req, res) => {
     } catch (err) {
       res.status(500).json(err);
     }
-  })
+  });
 
-  router.get('/feed', async (req, res) => {
+router.get('/feed', async (req, res) => {
     try {
         // Get all sessions and join with user and pet data
-        const sessionData = await Session.findAll({
+        const logData = await Log.findAll({
             include: [
                 {
                     model: User,
@@ -50,11 +54,11 @@ router.get('/profile', withAuth, async (req, res) => {
         });
 
         // Serialize data so template can read it
-        const sessions = sessionData.map((session) => session.get({ plain: true }));
+        const logs = logData.map((log) => log.get({ plain: true }));
 
         // Pass serialized data into template
         res.render('feed', {
-            sessions
+            logs
         });
     } catch (err) {
         res.status(500).json(err)

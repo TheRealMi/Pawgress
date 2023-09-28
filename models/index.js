@@ -2,7 +2,7 @@
 const User = require('./User');
 const Pet = require('./Pet');
 const Behavior = require('./Behavior');
-const Session = require('./Session');
+const Session = require('./Log');
 
 User.hasMany(Pet, {
     foreignKey: 'user_id',
