@@ -1,14 +1,17 @@
 [
     {
         "name": "Joy",
-        "breed": "goldendoodle"
+        "breed": "goldendoodle",
+        "user_id": "1"
     },
     {
         "name": "Odin",
-        "breed": "husky mix"
+        "breed": "husky mix",
+        "user_id": "3"
     },
     {
         "name": "Maui",
-        "breed": "staffy"
+        "breed": "staffy",
+        "user_id": "2"
     }
 ]
