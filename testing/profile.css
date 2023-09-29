@@ -20,6 +20,10 @@ header{
 
 }
 
+.card-content {
+    width: 100%;
+}
+
 #pawgress{
     text-align: center;
 }
