@@ -3,7 +3,7 @@ const{ User, Pet, Behavior, Training } = require('../models');
 const withAuth = require('../utils/auth');
 
 router.get('/', function (req, res) {
-    res.render('homepage');
+    res.render('homepage', {logged_in: req.session.logged_in});
 })
 
 router.get('/login', function (req, res) {
@@ -23,7 +23,7 @@ router.get('/profile', withAuth, async (req, res) => {
       const userData = await User.findByPk(req.session.user_id, {
         attributes: { exclude: ['password'] },
         // Join the Pet and Behavior tables associated with the user that is logged in
-        include: [{ model: Pet }, { model: Behavior }]
+        include: [{ model: Pet, include: [{ model: Behavior }] }]
       });
   
       const user = userData.get({ plain: true });
@@ -59,7 +59,8 @@ router.get('/feed', async (req, res) => {
 
         // Pass serialized data into template
         res.render('feed', {
-            trainings
+            trainings,
+            logged_in: req.session.logged_in
         });
     } catch (err) {
         res.status(500).json(err)
