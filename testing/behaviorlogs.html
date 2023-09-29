@@ -16,17 +16,17 @@
             <h2 class="title is-2">Add new session</h2>
             <div class="block">
                 <h4 class="title is-4">Name your session:</h4>
-                <input class="input is-info" style="width: 33%" type="text" placeholder="Summary">
+                <input id="training title" class="input is-info" style="width: 33%" type="text" placeholder="Summary">
             </div>
             <div class="block">
                 <h4 class="title is-4">Tell us about your paw-gress:</h4>
-                <textarea class="textarea is-info" placeholder="Session Notes"></textarea>
+                <textarea id="training notes" class="textarea is-info" placeholder="Session Notes"></textarea>
             </div>
             <div class="block">
                 <h4 class="title is-4">Show us what you've got!</h4>
                 <h4 class="subtitle is-6">Add a picture or video of your session:</h4>
                 <form action="/profile" method="post" enctype="multipart/form-data">
-                    <input type="file" name="avatar" />
+                    <input id="training media" type="file" name="avatar" />
                   </form>
                 <div class="file">
                     <label class="file-label">
@@ -43,19 +43,23 @@
                   </div>
             </div>
             <div class="block level-right">
-                    <button class="button is-info">Submit</button>
+                    <button id="training submit btn" class="button is-info">Submit</button>
             </div>
         </section>
     </div>
     <section class="section">
         <div class="container">
+            <!-- Use for loop to loop through training sessions in db -->
             <article class="message">
                 <div class="message-header">
+                    <!-- Insert training title  -->
                     <p>Our first session!</p>
                     <button class="delete" aria-label="delete"></button>
                 </div>
                 <div class="message-body">
+                    <!-- Insert training notes  -->
                     <p>This section will be filled with the notes from the first session logged. It may even include a picture or video!</p>
+                    <!-- Insert training date  -->
                     <p>Include a date stamp at the bottom of each session note.</p>
                 </div>
             </article>
