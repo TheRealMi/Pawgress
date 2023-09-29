@@ -1,13 +1,3 @@
-// Create a login form handler
-// Need fetch requests
-
-//Create a create account form handler
-// Need fetch requests
-
-
-
-
-
 const loginForm = document.querySelector('form');
 const usernameInput = document.querySelector('input[type="text"]');
 const passwordInput = document.querySelector('input[type="password"]');

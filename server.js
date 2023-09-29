@@ -39,7 +39,7 @@ app.set('view engine', 'handlebars');
 // Use express functions to handle data processing
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
-app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.static(path.join(__dirname, '/public')));
 
 // Inform Express.js we are using the routes in controllers
 app.use(routes);
