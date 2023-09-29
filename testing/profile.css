@@ -4,6 +4,10 @@ header{
 
 }
 
+ h3{
+    background-color: aqua;
+}
+
 .cards {
     width: 500px;
     text-align:justify;
@@ -30,7 +34,7 @@ header{
     font-family:'Khand';
 }
 
-.p-title{
+.hero-body .p-title{
     text-align: left;
     font-family:'Khand';
     
@@ -89,4 +93,4 @@ width: 20px;
 height: 10px
 justify-content:left */
 
-}
+
