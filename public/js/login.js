@@ -1,13 +1,3 @@
-// Create a login form handler
-// Need fetch requests
-
-//Create a create account form handler
-// Need fetch requests
-
-
-
-
-
 const loginForm = document.querySelector('form');
 const usernameInput = document.querySelector('input[type="text"]');
 const passwordInput = document.querySelector('input[type="password"]');
@@ -35,8 +25,8 @@ loginForm.addEventListener('submit', async (e) => {
         });
 
         if (response.ok) {
-            // Redirect to a success page or perform other actions
-            window.location.href = '/profile'; // Replace with the actual URL
+            // Redirect to profile page
+            window.location.href = '/profile'; 
         } else {
             // Display an error message (e.g., invalid credentials)
             alert('Invalid username or password. Please try again.');

@@ -41,21 +41,11 @@ router.get('/profile', withAuth, async (req, res) => {
 router.get('/feed', async (req, res) => {
     try {
         // Get all trainings and join with user and pet data
-        const trainingData = await Training.findAll({
-            include: [
-                {
-                    model: User,
-                    attributes: ['username']
-                },
-                {
-                    model: Pet,
-                    attributes: ['name']
-                }
-            ]
-        });
+        const trainingData = await Training.findAll({ include: [{model: Behavior, include: [{model: Pet, include: [{model: User}]}]}]});
 
         // Serialize data so template can read it
         const trainings = trainingData.map((training) => training.get({ plain: true }));
+        console.log(trainings);
 
         // Pass serialized data into template
         res.render('feed', {

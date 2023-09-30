@@ -1,13 +1,3 @@
-// Create a login form handler
-// Need fetch requests
-
-//Create a create account form handler
-// Need fetch requests
-
-
-
-
-
 const signupForm = document.querySelector('form');
 const usernameInput = document.querySelector('input[type="text"]');
 const passwordInput = document.querySelector('input[type="password"]');
@@ -19,7 +9,7 @@ const breedInput = document.querySelector('input[type="breed"]');
 signupForm.addEventListener('submit', async (e) => {
     e.preventDefault(); // Prevent the default form submission behavior
 
-    // Get the values of the username and password inputs
+    // Get the values of the user inputs
     const username = usernameInput.value.trim();
     const password = passwordInput.value.trim();
     const email = emailInput.value.trim();
@@ -42,7 +32,7 @@ signupForm.addEventListener('submit', async (e) => {
 
         if (response.ok) {
             // Redirect to a success page or perform other actions
-            window.location.href = '/profile'; // Replace with the actual URL
+            window.location.href = '/profile'; 
         } 
     } catch (error) {
         console.error('Error:', error);
