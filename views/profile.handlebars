@@ -1,7 +1,7 @@
 <section class="hero is-warning">
     <div class="hero-body">
         <p class="p-title">
-            "Hello there {{user.username}}"
+            "Hello there {{username}}"
         </p>
     </div>
 </section>
@@ -14,8 +14,8 @@
         <img id="user-photo" src="./images/user male placeholder.png">
     </div>
     <div class="column">
-        {{#if user.behaviors.length}}
-        {{#each user.behaviors as |behavior|}}
+        {{#if behaviors.length}}
+        {{#each behaviors as |behavior|}}
         <div class="cards">
            <h3>{{behavior.name}}</h3>
         </div>

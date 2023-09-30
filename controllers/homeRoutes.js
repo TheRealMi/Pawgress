@@ -27,6 +27,7 @@ router.get('/profile', withAuth, async (req, res) => {
       });
   
       const user = userData.get({ plain: true });
+      console.log(user);
  
       res.render('profile', {
         ...user,
@@ -45,7 +46,6 @@ router.get('/feed', async (req, res) => {
 
         // Serialize data so template can read it
         const trainings = trainingData.map((training) => training.get({ plain: true }));
-        console.log(trainings);
 
         // Pass serialized data into template
         res.render('feed', {
