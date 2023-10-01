@@ -1,169 +1,38 @@
     <section class="section">
         <div class="container">
-            <div class="tile is-ancestor">
+            <div class="tile is-ancestor is-vertical">
+              {{#each trainings as |training|}}
                 <div class="tile is-4 is-parent">
                     <div class="tile is-child">
                         <div class="card">
                             <div class="card-image">
                               <figure class="image is-4by3">
                                 <!--Get picture from DB-->
-                                <img src="./images/dog-training-5098572_1280.jpg" alt="Placeholder image">
+                                <img src="./images/{{training.imageFile}}" alt="Placeholder image">
                               </figure>
                             </div>
                             <div class="card-content">
                               <div class="media">
                                 <div class="media-content">
                                     <!--Get dog name from DB-->
-                                  <p class="title is-4">Odin</p>
+                                  <p class="title is-4">{{training.behavior.pet.name}}</p>
                                   <!--Get username from DB-->
-                                  <p class="subtitle is-6">Mia O</p>
+                                  <p class="subtitle is-6">{{training.behavior.pet.user.username}}</p>
                                 </div>
                               </div>
     
                               <div class="content">
                                 <!--Get session notes from DB-->
-                                Worked on our 'paw' behavior today! <a>@bulmaio</a>.
-                                <a href="#">#css</a> <a href="#">#responsive</a>
+                                {{training.notes}}                                
                                 <br>
                                 <!--Get date from DB-->
-                                <time datetime="2016-1-1">11:09 PM - 1 Jan 2016</time>
+                                <time datetime="2016-1-1">{{training.date_created}}</time>
                               </div>
                             </div>
                           </div>
                     </div>
                 </div>
-                <div class="tile is-4 is-parent">
-                    <div class="tile is-child">
-                        <div class="card">
-                            <div class="card-image">
-                              <figure class="image is-4by3">
-                                <img src="./images/dachshund-672780_1280.jpg" alt="Placeholder image">
-                              </figure>
-                            </div>
-                            <div class="card-content">
-                              <div class="media">
-                                <div class="media-content">
-                                  <p class="title is-4">Pepper</p>
-                                  <p class="subtitle is-6">John S</p>
-                                </div>
-                              </div>
-                          
-                              <div class="content">
-                                Practiced loose leash walking in the neighborhood. <a>@bulmaio</a>.
-                                <a href="#">#css</a> <a href="#">#responsive</a>
-                                <br>
-                                <time datetime="2016-1-1">11:09 PM - 1 Jan 2016</time>
-                              </div>
-                            </div>
-                          </div>
-                    </div>
-                </div>
-                <div class="tile is-4 is-parent">
-                    <div class="tile is-child">
-                        <div class="card">
-                            <div class="card-image">
-                              <figure class="image is-4by3">
-                                <img src="./images/bernese-mountain-dog-208092_1280.jpg" alt="Placeholder image">
-                              </figure>
-                            </div>
-                            <div class="card-content">
-                              <div class="media">
-                                <div class="media-content">
-                                  <p class="title is-4">Maui</p>
-                                  <p class="subtitle is-6">Annie S</p>
-                                </div>
-                              </div>
-                          
-                              <div class="content">
-                                Didn't jump on visitors at the house! <a>@bulmaio</a>.
-                                <a href="#">#css</a> <a href="#">#responsive</a>
-                                <br>
-                                <time datetime="2016-1-1">11:09 PM - 1 Jan 2016</time>
-                              </div>
-                            </div>
-                          </div>
-                    </div>
-                </div>
-            </div>
-            <div class="tile is-ancestor">
-                <div class="tile is-4 is-parent">
-                    <div class="tile is-child">
-                        <div class="card">
-                            <div class="card-image">
-                              <figure class="image is-4by3">
-                                <img src="./images/dog-training-5098572_1280.jpg" alt="Placeholder image">
-                              </figure>
-                            </div>
-                            <div class="card-content">
-                              <div class="media">
-                                <div class="media-content">
-                                  <p class="title is-4">Odin</p>
-                                  <p class="subtitle is-6">Mia O</p>
-                                </div>
-                              </div>
-    
-                              <div class="content">
-                                Worked on our 'paw' behavior today! <a>@bulmaio</a>.
-                                <a href="#">#css</a> <a href="#">#responsive</a>
-                                <br>
-                                <time datetime="2016-1-1">11:09 PM - 1 Jan 2016</time>
-                              </div>
-                            </div>
-                          </div>
-                    </div>
-                </div>
-                <div class="tile is-4 is-parent">
-                    <div class="tile is-child">
-                        <div class="card">
-                            <div class="card-image">
-                              <figure class="image is-4by3">
-                                <img src="./images/dachshund-672780_1280.jpg" alt="Placeholder image">
-                              </figure>
-                            </div>
-                            <div class="card-content">
-                              <div class="media">
-                                <div class="media-content">
-                                  <p class="title is-4">Pepper</p>
-                                  <p class="subtitle is-6">John S</p>
-                                </div>
-                              </div>
-                          
-                              <div class="content">
-                                Practiced loose leash walking in the neighborhood. <a>@bulmaio</a>.
-                                <a href="#">#css</a> <a href="#">#responsive</a>
-                                <br>
-                                <time datetime="2016-1-1">11:09 PM - 1 Jan 2016</time>
-                              </div>
-                            </div>
-                          </div>
-                    </div>
-                </div>
-                <div class="tile is-4 is-parent">
-                    <div class="tile is-child">
-                        <div class="card">
-                            <div class="card-image">
-                              <figure class="image is-4by3">
-                                <img src="./images/bernese-mountain-dog-208092_1280.jpg" alt="Placeholder image">
-                              </figure>
-                            </div>
-                            <div class="card-content">
-                              <div class="media">
-                                <div class="media-content">
-                                  <p class="title is-4">Maui</p>
-                                  <p class="subtitle is-6">Annie S</p>
-                                </div>
-                              </div>
-                          
-                              <div class="content">
-                                Didn't jump on visitors at the house! <a>@bulmaio</a>.
-                                <a href="#">#css</a> <a href="#">#responsive</a>
-                                <br>
-                                <time datetime="2016-1-1">11:09 PM - 1 Jan 2016</time>
-                              </div>
-                            </div>
-                          </div>
-                    </div>
-                </div>
+                {{/each}}
             </div>
         </div>
     </section>
