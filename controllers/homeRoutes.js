@@ -26,7 +26,7 @@ router.get('/profile', withAuth, async (req, res) => {
       const userData = await User.findByPk(req.session.user_id, {
         attributes: { exclude: ['password'] },
         // Join the Pet and Behavior tables associated with the user that is logged in
-        include: [{ model: Pet, include: [{ model: Behavior }] }]
+        include: { model: Pet, include: { model: Behavior } }
       });
   
       const user = userData.get({ plain: true });
