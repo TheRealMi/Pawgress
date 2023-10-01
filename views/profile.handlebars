@@ -1,0 +1,35 @@
+<section class="hero is-warning">
+    <div class="hero-body">
+        <p class="p-title">
+            "Hello there {{username}}"
+        </p>
+    </div>
+</section>
+
+
+
+
+<div class="columns">
+    <div class="column">
+        <img id="user-photo" src="./images/user male placeholder.png">
+    </div>
+    <div class="column">
+        {{#if behaviors.length}}
+        {{#each behaviors as |behavior|}}
+        <div class="cards">
+           <h3>{{behavior.name}}</h3>
+        </div>
+        {{/each}}
+        {{/if}}
+    </div>
+
+    <body>
+
+
+        <!-- <div class="account">
+            <btn><img id="login" src="./images/login.png"> </btn>
+            <btn id="create"> Create Account </btn>
+        </div> -->
+
+       
+        <img id="paw-watermark" src="./images/dog-paw.png">

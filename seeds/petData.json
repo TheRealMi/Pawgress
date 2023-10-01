@@ -5,13 +5,13 @@
         "user_id": "1"
     },
     {
-        "name": "Odin",
-        "breed": "husky mix",
-        "user_id": "3"
-    },
-    {
         "name": "Maui",
         "breed": "staffy",
         "user_id": "2"
+    },
+    {
+        "name": "Odin",
+        "breed": "husky mix",
+        "user_id": "3"
     }
 ]

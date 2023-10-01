@@ -4,6 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.6.2/css/bulma.min.css">
+    <link href='https://fonts.googleapis.com/css?family=Khand' rel='stylesheet'>
+    <link rel="stylesheet" href="/css/createaccount.css">
+    <link rel="stylesheet" href="/css/feed.css">
+    <link rel="stylesheet" href="/css/homepage.css">
+    <link rel="stylesheet" href="/css/login.css">
     <title></title>
 </head>
 <body>
@@ -17,15 +22,23 @@
             </a>
         </div>
         <div class="navbar-menu is-active" id="nav-links">
+            <a href="/" class="navbar-item">Home</a>
             <div class="navbar-end">
-                <a href="/views/profile.handlebars" class="navbar-item">Profile</a>
-                <a href="/views/homepage.handlebars" class="navbar-item">Logout</a>
-                <a href="/views/feed.handlebars" class="navbar-item">Feed<img src="images/feed bowl.png" width="60" height="70"></a>
+                {{#if logged_in}}
+                <a href="/profile" class="navbar-item">Profile</a>
+                <a href="#" id="logout" class="navbar-item">Logout</a>
+                {{else}}
+                <a href="/login" class="navbar-item">Login</a>
+                <a href="/createaccount" class="navbar-item">Create Account</a>
+                {{/if}}
+                <a href="/feed" class="navbar-item">Feed<img src="images/feed bowl.png" width="60" height="70"></a>
             </div>
         </div>
     </nav>
 
-    <script src="navbar.js"></script>
+    <script src="js/navbar.js"></script>
+    <script src="js/logout.js"></script>
+    
     {{{body}}}
 </body>
 </html>

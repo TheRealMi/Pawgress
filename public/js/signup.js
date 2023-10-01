@@ -1,14 +1,20 @@
-const loginForm = document.querySelector('form');
+const signupForm = document.querySelector('form');
 const usernameInput = document.querySelector('input[type="text"]');
 const passwordInput = document.querySelector('input[type="password"]');
+const emailInput = document.querySelector('input[type="email"]');
+const petNameInput = document.querySelector('input[type="pet"]');
+const breedInput = document.querySelector('input[type="breed"]');
 
 // Add event listener for the form submission
-loginForm.addEventListener('submit', async (e) => {
+signupForm.addEventListener('submit', async (e) => {
     e.preventDefault(); // Prevent the default form submission behavior
 
-    // Get the values of the username and password inputs
+    // Get the values of the user inputs
     const username = usernameInput.value.trim();
     const password = passwordInput.value.trim();
+    const email = emailInput.value.trim();
+    const pet_name = petNameInput.value.trim();
+    const breed = breedInput.value.trim();
 
     // Perform client-side validation (you can customize this)
     if (!username || !password) {
@@ -18,19 +24,16 @@ loginForm.addEventListener('submit', async (e) => {
 
     // Send a POST request to your server for authentication
     try {
-        const response = await fetch('/api/users/login', {
+        const response = await fetch('/api/users', {
             method: 'POST',
-            body: JSON.stringify({ username, password }),
+            body: JSON.stringify({ username, password, email, pet_name, breed }),
             headers: { 'Content-Type': 'application/json' },
         });
 
         if (response.ok) {
-            // Redirect to profile page
+            // Redirect to a success page or perform other actions
             window.location.href = '/profile'; 
-        } else {
-            // Display an error message (e.g., invalid credentials)
-            alert('Invalid username or password. Please try again.');
-        }
+        } 
     } catch (error) {
         console.error('Error:', error);
         // Handle any other errors that may occur during the fetch

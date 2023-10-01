@@ -3,7 +3,7 @@ const{ User, Pet, Behavior, Training } = require('../models');
 const withAuth = require('../utils/auth');
 
 router.get('/', function (req, res) {
-    res.render('homepage');
+    res.render('homepage', {logged_in: req.session.logged_in});
 })
 
 router.get('/login', function (req, res) {
@@ -23,10 +23,11 @@ router.get('/profile', withAuth, async (req, res) => {
       const userData = await User.findByPk(req.session.user_id, {
         attributes: { exclude: ['password'] },
         // Join the Pet and Behavior tables associated with the user that is logged in
-        include: [{ model: Pet }, { model: Behavior }]
+        include: [{ model: Pet, include: [{ model: Behavior }] }]
       });
   
       const user = userData.get({ plain: true });
+      console.log(user);
  
       res.render('profile', {
         ...user,
@@ -41,25 +42,15 @@ router.get('/profile', withAuth, async (req, res) => {
 router.get('/feed', async (req, res) => {
     try {
         // Get all trainings and join with user and pet data
-        const trainingData = await Training.findAll({
-            include: [
-                {
-                    model: User,
-                    attributes: ['username']
-                },
-                {
-                    model: Pet,
-                    attributes: ['name']
-                }
-            ]
-        });
+        const trainingData = await Training.findAll({ include: [{model: Behavior, include: [{model: Pet, include: [{model: User}]}]}]});
 
         // Serialize data so template can read it
         const trainings = trainingData.map((training) => training.get({ plain: true }));
 
         // Pass serialized data into template
         res.render('feed', {
-            trainings
+            trainings,
+            logged_in: req.session.logged_in
         });
     } catch (err) {
         res.status(500).json(err)
