@@ -2,14 +2,17 @@ const router = require('express').Router();
 const{ User, Pet, Behavior, Training } = require('../models');
 const withAuth = require('../utils/auth');
 
+// Homepage
 router.get('/', function (req, res) {
     res.render('homepage', {logged_in: req.session.logged_in});
 })
 
+// Login page
 router.get('/login', function (req, res) {
     res.render('login');
 })
 
+// Create Account page
 router.get('/createaccount',  function (req, res) {
     res.render('createaccount');
 })

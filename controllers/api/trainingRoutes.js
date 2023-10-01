@@ -18,7 +18,7 @@ router.get('/:behavior_id', async (req, res) => {
     }
   });
 
-  // Route to create a new training log for a specific behavior
+// Route to create a new training log for a specific behavior
 router.post('/:behavior_id', async (req, res) => {
     try {
       const newTraining = await Training.create({
