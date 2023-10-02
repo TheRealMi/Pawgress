@@ -27,7 +27,7 @@
                                 {{training.notes}}                                
                                 <br>
                                 <!--Get date from DB-->
-                                <time datetime="2016-1-1">{{training.date_created}}</time>
+                                <time>{{formatDate training.date_created}}</time>
                               </div>
                             </div>
                           </div>
@@ -37,3 +37,4 @@
             </div>
         </div>
     </section>
+        <script src="js/feed.js"></script>
