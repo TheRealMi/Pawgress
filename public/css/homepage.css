@@ -1,4 +1,14 @@
-.hero-body {
+header{
+    
+    background-color: orange;
+
+}
+
+.navbar-front {
+    color: #fff;
+}
+
+#pawgress{
     text-align: center;
 }
 
