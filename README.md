@@ -31,13 +31,29 @@ Future Development:
 The platform aims to provide: resources, articles, and expert advice on dog training to help users achieve their goals effectively.
 
 
-<!-- ## Usage
-This site may now be accessed with all its updated features by visiting the hyperlink below: 
+## Usage
+You may access the website at the following URL:
+https://pawgress-263620beafdd.herokuapp.com/
 
-https://
 
-The page will welcome you with the following image:
-<img src="./images/" alt="README screenshot"> -->
+The pages will welcome you with the following images:
+
+Home: 
+<img src="public/images/Home-SS.png" alt="Home Page screenshot">
+
+Create Account:
+<img src="public/images/Create-SS.png" alt="Create Account screenshot">
+
+Login:
+<img src="public/images/Login-SS.png" alt="Login screenshot">
+
+Profile:
+<img src="public/images/Profile SS.png" alt="Profile screenshot">
+
+Feed: 
+<img src="public/images/Feed-SS.png" alt="Feed page screenshot">
+
+
 ## Technologies Used
 
 The Dog Behavior Tracker is built using the following technologies:
