@@ -8,7 +8,7 @@ header{
     background-color: aqua;
 }
 
-.cards {
+/* .cards {
     width: 500px;
     text-align:justify;
     font-size: 22px;
@@ -18,7 +18,7 @@ header{
     padding: 700px;
     background-color: aqua;
 
-}
+} */
 
 #pawgress{
     text-align: center;
@@ -51,7 +51,7 @@ width: 700px;
 }
 
 
-#dog-watermark{
+/* #dog-watermark{
     
 opacity: 0.1;
 position: fixed;
@@ -59,7 +59,7 @@ top: -115px;
 left: 725px;
 right: 825px;
     
-}
+} */
 
 
 
@@ -73,12 +73,12 @@ right: 825px;
     right: 300px;
 } */
 
-#create{
+/* #create{
     position: fixed;
     bottom: 150px;
     right: 480px;
     text-decoration: underline;
-}
+} */
 
 #user-photo{
     height: auto;

@@ -11,16 +11,16 @@
 
 <div class="columns">
     <div class="column">
-        <img id="user-photo" src="./images/user male placeholder.png">
+        <img src="./images/maui.jpg" alt="Placeholder image">
     </div>
     <div class="column">
-        {{#if behaviors.length}}
-        {{#each behaviors as |behavior|}}
+        {{#each pets}}
+        <p>{{name}}</p>
+        {{#each behaviors}}
         <div class="cards">
-           <h3>{{behavior.name}}</h3>
+           <h3>{{name}}</h3>
         </div>
-        {{/each}}
-        {{/if}}
+        {{/each}}{{/each}}
     </div>
 
     <body>
