@@ -1,0 +1,16 @@
+.hero-body {
+    text-align: center;
+}
+
+#paw-watermark {
+    opacity: 0.1;
+    right: -9.375rem;
+    height: auto;
+    width: 43.75rem;
+    bottom: 0px;
+    position: absolute;
+}
+
+.button {
+    z-index: 1;
+}

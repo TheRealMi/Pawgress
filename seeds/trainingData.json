@@ -1,0 +1,30 @@
+[
+    {
+        "title": "First day of sit",
+        "notes": "Joy picked up the behavior so quickly!",
+        "imageFile": "joysit.jpg",
+        "date_created": "10-3-23",
+        "behavior_id": "1"
+    },
+    {
+        "title": "Paw practice",
+        "notes": "Practicing paw with Maui. He's getting the hang of it!",
+        "imageFile": "maui.jpg",
+        "date_created": "10-1-23",
+        "behavior_id": "2"
+    },
+    {
+        "title": "More paw practice",
+        "notes": "Maui enjoys this behavior so much, but needs work on being more delicate with his paw.",
+        "imageFile": "pawsupmaui.jpg",
+        "date_created": "10-5-23",
+        "behavior_id": "2"
+    },
+    {
+        "title": "Spin cycle!",
+        "notes": "TIL Odin loves working for small pieces of cheese",
+        "imageFile": "odinsaycheese.jpg",
+        "date_created": "9-25-23",
+        "behavior_id": "3"
+    }
+]

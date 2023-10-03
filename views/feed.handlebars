@@ -1,0 +1,40 @@
+    <section class="section">
+        <div class="container">
+            <div class="tile is-ancestor is-vertical">
+              {{#each trainings as |training|}}
+                <div class="tile is-4 is-parent">
+                    <div class="tile is-child">
+                        <div class="card">
+                            <div class="card-image">
+                              <figure class="image is-4by3">
+                                <!--Get picture from DB-->
+                                <img src="./images/{{training.imageFile}}" alt="Placeholder image">
+                              </figure>
+                            </div>
+                            <div class="card-content">
+                              <div class="media">
+                                <div class="media-content">
+                                    <!--Get dog name from DB-->
+                                  <p class="title is-4">{{training.behavior.pet.name}}</p>
+                                  <!--Get username from DB-->
+                                  <p class="subtitle is-6">{{training.behavior.pet.user.username}}</p>
+                                  <p>{{training.behavior.name}}</p>
+                                </div>
+                              </div>
+    
+                              <div class="content">
+                                <!--Get session notes from DB-->
+                                {{training.notes}}                                
+                                <br>
+                                <!--Get date from DB-->
+                                <time>{{formatDate training.date_created}}</time>
+                              </div>
+                            </div>
+                          </div>
+                    </div>
+                </div>
+                {{/each}}
+            </div>
+        </div>
+    </section>
+        <script src="js/feed.js"></script>

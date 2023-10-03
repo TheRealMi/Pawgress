@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Behavior Log</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+</head>
+
+<body>
+    <div class="container">
+        <section class="section box">
+            <!--All session info will be stored in sessions table with a link to the behavior it is targeting-->
+            <!--Let's create a popup for adding a new behavior on the profile page where users can input a new behavior name that saves to the DB with a generated behavior id to link it to its corresponding pet and sessions-->
+            <h2 class="title is-2">Add new session</h2>
+            <div class="block">
+                <h4 class="title is-4">Name your session:</h4>
+                <input id="training title" class="input is-info" style="width: 33%" type="text" placeholder="Summary">
+            </div>
+            <div class="block">
+                <h4 class="title is-4">Tell us about your paw-gress:</h4>
+                <textarea id="training notes" class="textarea is-info" placeholder="Session Notes"></textarea>
+            </div>
+            <div class="block">
+                <h4 class="title is-4">Show us what you've got!</h4>
+                <h4 class="subtitle is-6">Add a picture or video of your session:</h4>
+                <form action="/profile" method="post" enctype="multipart/form-data">
+                    <input id="training media" type="file" name="avatar" />
+                  </form>
+                <div class="file">
+                    <label class="file-label">
+                      <input class="file-input" type="file" name="resume">
+                      <span class="file-cta">
+                        <span class="file-icon">
+                            <ion-icon name="paw"></ion-icon>
+                        </span>
+                        <span class="file-label">
+                          Choose a file…
+                        </span>
+                      </span>
+                    </label>
+                  </div>
+            </div>
+            <div class="block level-right">
+                    <button id="training submit btn" class="button is-info">Submit</button>
+            </div>
+        </section>
+    </div>
+    <section class="section">
+        <div class="container">
+            <!-- Use for loop to loop through training sessions in db -->
+            <article class="message">
+                <div class="message-header">
+                    <!-- Insert training title  -->
+                    <p>Our first session!</p>
+                    <button class="delete" aria-label="delete"></button>
+                </div>
+                <div class="message-body">
+                    <!-- Insert training notes  -->
+                    <p>This section will be filled with the notes from the first session logged. It may even include a picture or video!</p>
+                    <!-- Insert training date  -->
+                    <p>Include a date stamp at the bottom of each session note.</p>
+                </div>
+            </article>
+            <article class="message">
+                <div class="message-header">
+                    <p>Our second session!</p>
+                    <button class="delete" aria-label="delete"></button>
+                </div>
+                <div class="message-body">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. <strong>Pellentesque risus mi</strong>,
+                    tempus quis placerat ut, porta nec nulla.Nullam gravida purus diam, et dictum <a>felis venenatis</a>
+                    efficitur. Aenean ac <em>eleifend lacus</em>, in mollis lectus.
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. <strong>Pellentesque risus mi</strong>,
+                    tempus quis placerat ut, porta nec nulla.Nullam gravida purus diam, et dictum <a>felis venenatis</a>
+                    efficitur. Aenean ac <em>eleifend lacus</em>, in mollis lectus.
+                </div>
+            </article>
+        </div>
+    </section>
+    
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+</body>
+
+
+</html>

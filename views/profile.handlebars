@@ -1,0 +1,34 @@
+<section class="hero is-warning">
+    <div class="hero-body">
+        <p class="p-title">
+            "Hello there {{username}}"
+        </p>
+    </div>
+</section>
+
+{{#each pets}}
+<div class="card">
+    <div class="card-content">
+        <div class="media">
+            <div class="media-left">
+
+                <figure class="image is-128x128">
+                    <img class="is-rounded" src="/images/joysit.jpg">
+                </figure>
+
+            </div>
+            <div class="media-content">
+                <p class="title is-4">{{name}}</p>
+                {{#each behaviors}}
+                <p class="subtitle is-4">{{name}}</p>
+                <div class="content">
+                    {{description}}
+                    <br>
+                </div>
+                {{/each}}
+            </div>
+        </div>
+
+    </div>
+</div>
+{{/each}}

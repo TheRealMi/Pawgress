@@ -1,0 +1,100 @@
+header{
+    
+    background-color: orange;
+
+}
+
+ h3{
+    background-color: aqua;
+}
+
+.cards {
+    width: 500px;
+    text-align:justify;
+    font-size: 22px;
+    position: fixed;
+    right: 300px;
+    top: 300px;
+    padding: 700px;
+    background-color: aqua;
+
+}
+
+.card-content {
+    width: 100%;
+}
+
+#pawgress{
+    text-align: center;
+}
+
+#middle {
+    background-color: aqua;
+
+}
+
+.title{
+    text-align: center;
+    font-family:'Khand';
+}
+
+.hero-body .p-title{
+    text-align: left;
+    font-family:'Khand';
+    
+}
+
+#paw-watermark{
+    
+opacity: 0.1;
+position: fixed;
+bottom: 0px;
+right: -150px;
+height: auto;
+width: 700px;
+}
+
+
+#dog-watermark{
+    
+opacity: 0.1;
+position: fixed;
+top: -115px;
+left: 725px;
+right: 825px;
+    
+}
+
+
+
+
+
+
+
+/* #login{
+    position: fixed;
+    bottom: 150px;
+    right: 300px;
+} */
+
+#create{
+    position: fixed;
+    bottom: 150px;
+    right: 480px;
+    text-decoration: underline;
+}
+
+#user-photo{
+    height: auto;
+    width: 500px;
+    
+}
+
+/* #feed-bowl{
+display: flex;
+flex-wrap: wrap;
+width: 20px;
+height: 10px
+justify-content:left */
+
+

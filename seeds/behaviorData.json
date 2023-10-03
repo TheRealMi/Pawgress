@@ -1,0 +1,20 @@
+[
+    {
+        "name": "Sit",
+        "description": "Joy sits with her tail on the ground",
+        "pawgress": "3",
+        "pet_id": "1"
+    },
+    {
+        "name": "Paw",
+        "description": "Maui lifts his paw to my hand",
+        "pawgress": "4",
+        "pet_id": "2"
+    },
+    {
+        "name": "Spin",
+        "description": "Odin chases his tail counterclockwise",
+        "pawgress": "2",
+        "pet_id": "3"
+    }
+]

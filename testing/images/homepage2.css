@@ -1,0 +1,10 @@
+body {
+    background-image: url('../images/dog-paw.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+}
+
+
+

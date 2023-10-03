@@ -1,0 +1,118 @@
+header{
+    
+    background-color: orange;
+
+}
+
+#pawgress{
+    text-align: center;
+}
+
+#middle {
+    background-color: aqua;
+
+}
+
+.title{
+    text-align: center;
+    font-family:'Khand';
+}
+
+#paw-watermark{
+    
+opacity: 0.1;
+position: absolute;
+bottom: 0px;
+right: -9.375rem;
+height: auto;
+width: 43.75rem;
+}
+
+
+
+.top-part{
+    justify-content: center;
+    display: flex;
+    align-items: center;
+   
+}
+
+#dog-watermark{
+    
+opacity: 0.1;
+position: absolute;
+top: -9.3rem;
+display: block;
+width: 35rem;
+justify-content: center;
+margin: auto;
+
+
+
+    
+} 
+
+
+
+
+#description {
+    width: 31.25rem;
+    text-align:justify;
+    font-size: 22px;
+    position: absolute;
+    right: 18.75rem;
+    top: 18.75rem;
+}
+
+
+
+#login{
+    position: absolute;
+    bottom: 5rem;
+    right: 18.75rem;
+}
+
+#create{
+    position: absolute;
+    bottom: 5rem;
+    right: 30rem;
+    text-decoration: underline;
+}
+
+#dogs{
+    height: auto;
+    width: 50rem;
+}
+
+
+@media only screen and (max-width: 400px){
+    #dogs{
+        display: none;
+    }
+
+    #paw-watermark{
+        display: none;
+    }
+
+    #description{
+        display: flex;
+        right: 2rem;
+        font-size: 18px;
+        width: 20rem;
+        text-align: justify;
+        position: absolute;
+
+    }
+
+    #login{
+        bottom: 1rem;
+        right: 0rem;
+    }
+
+    #create{
+        bottom: 1rem;
+        right: 9rem;
+    }
+
+}
+
